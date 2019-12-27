@@ -14,7 +14,7 @@ A small project to get myself reacquainted with Python. It was also a little bit
    - [[https://click.palletsprojects.com/en/7.x/][click]] is elegant and capable, but a little complex
    - [[https://github.com/google/python-fire][Fire]] looks fantastic
 
-**** TODO [0/3]
+**** TODO Features thinking about adding
 - [ ] Create web front-end
-- [ ] Extract and add more metadata to output?
-- [ ] Cache top stories?
+- [ ] Extract and add more metadata to output
+- [ ] Cache top stories

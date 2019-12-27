@@ -34,11 +34,6 @@ def create_epub(story_id):
 body {
     font-family: Liberation Serif, Helvetica, Times New Roman, serif;
 }
-h2 {
-     text-align: left;
-     text-transform: uppercase;
-     font-weight: 200;
-}
 ol {
         list-style-type: none;
 }
