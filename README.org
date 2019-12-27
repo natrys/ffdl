@@ -1,0 +1,20 @@
+*** FFDL
+
+A small project to get myself reacquainted with Python. It was also a little bit useful - even though my days of reading fanfictions are long long gone, I was recently going over my old notes and it seems a lot of the stories are gone from FF.net. Fortunately fictionhunt is still around and has copy of many of those so I am using that here, but it means this tool is only limited to one fandom (HP). Well there are other tools for FF.net, AO3 etc. in general.
+
+**** New things about python that I have learned something of
+
+- Asynchronous I/O
+   - asyncio
+   - aiohttp
+- Dependency management tool
+   - poetry
+- Survey of CLI argument parsing libraries
+   - [[https://micheles.github.io/plac/][plac]] is nice and minimal
+   - [[https://click.palletsprojects.com/en/7.x/][click]] is elegant and capable, but a little complex
+   - [[https://github.com/google/python-fire][Fire]] looks fantastic
+
+**** TODO [0/3]
+- [ ] Create web front-end
+- [ ] Extract and add more metadata to output?
+- [ ] Cache top stories?
