@@ -5,10 +5,9 @@ A small project to get myself reacquainted with Python. It was also a little bit
 **** New things about python that I have learned something of
 
 - Asynchronous I/O
-   - asyncio
-   - aiohttp
+   - [[https://aiohttp.readthedocs.io/en/stable/][aiohttp]]
 - Dependency management tool
-   - poetry
+   - [[https://python-poetry.org/][poetry]]
 - Survey of CLI argument parsing libraries
    - [[https://micheles.github.io/plac/][plac]] is nice and minimal
    - [[https://click.palletsprojects.com/en/7.x/][click]] is elegant and capable, but a little complex

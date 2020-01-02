@@ -1,23 +1,18 @@
-import time, logging, sys
+import time, logging
 import asyncio
 
 from ebooklib import epub
-from ffdl import fictionhunt
+from ffdl.fictionhunt import fictionhunt
+from ffdl.utils import logger
 
-logging.basicConfig(
-    format="%(asctime)s %(levelname)s %(message)s",
-    level=logging.INFO,
-    datefmt="%H:%M:%S",
-    stream=sys.stderr
-)
 
-def create_epub(story_id):
-  logger = logging.getLogger(__name__)
+async def create_epub(story_id):
   start = time.perf_counter()
+  logger.info("Starting Download")
 
   book = epub.EpubBook()
-  title, author, chapters = asyncio.run(fictionhunt(story_id))
-  logger.debug(f"Download finished after: {time.perf_counter() - start} seconds")
+  title, author, chapters = await fictionhunt(story_id)
+  logger.info(f"Download finished after: {time.perf_counter() - start} seconds")
 
   book.set_identifier(f"{story_id}")
   book.set_title(title)
@@ -57,8 +52,8 @@ nav[epub|type~='toc'] > ol > li > ol > li {
   book.add_item(epub.EpubNcx())
   book.add_item(epub.EpubNav())
 
-  bookname = f'{author} - {title}'
-  epub.write_epub(f'{bookname}.epub', book)
+  bookname = f'{author} - {title}.epub'
+  epub.write_epub(f'{bookname}', book)
 
   logger.info(f"Book created after: {time.perf_counter() - start} seconds")
-  print(f"{bookname}.epub created")
+  return bookname

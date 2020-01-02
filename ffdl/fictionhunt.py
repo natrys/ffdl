@@ -4,8 +4,15 @@ import aiohttp
 from bs4 import BeautifulSoup
 from ebooklib import epub
 
+from ffdl.utils import logger
+
+
+async def on_request_end(session, trace_config_ctx, params):
+  logger.debug(f"For {params.url}, sent headers: {params.response.request_info.headers}")
+
 
 async def getmetadata(session, story_url):
+  logger.debug(f"Getting metadata for {story_url}")
   async with session.get(story_url) as response:
     story = BeautifulSoup(await response.text(), "lxml")
     title = story.find("h1", attrs={"class": "Story__title"}).text
@@ -34,8 +41,12 @@ async def get_chapter(session, chapter_id, story_url):
 async def fictionhunt(story_id):
   fictionhunt = "http://fictionhunt.com"
   story_url = f"{fictionhunt}/read/{story_id}"
-  async with aiohttp.ClientSession() as session:
+
+  trace_config = aiohttp.TraceConfig()
+  trace_config.on_request_end.append(on_request_end)
+  async with aiohttp.ClientSession(trace_configs=[trace_config]) as session:
     title, author, total = await getmetadata(session, story_url)
+    logger.info(f"Got metadata")
     chapters = (get_chapter(session, chapter, story_url)
                 for chapter in range(1, total + 1))
     return title, author, (await asyncio.gather(*chapters))
