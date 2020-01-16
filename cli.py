@@ -1,10 +1,10 @@
 import plac, asyncio
-from ffdl import *
+import ffdl
 
 
 def main(url_or_id: ("Fanfiction.net URL or just the ID")):
-    story_id = get_id(url_or_id)
-    asyncio.run(create_epub(story_id))
+    story_id = ffdl.get_id(url_or_id)
+    asyncio.run(ffdl.create_epub(story_id))
 
 
 if __name__ == "__main__":

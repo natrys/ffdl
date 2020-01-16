@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ffdl"
-version = "0.1.1"
+version = "0.1.2"
 description = "Convert fanfiction.net stories into epub for offline reading"
 authors = ["Imran Khan <imrankhan@teknik.io>"]
 license = "AGPL-3.0-or-later"
