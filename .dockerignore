@@ -1,0 +1,11 @@
+.git/
+
+*.pyc
+*.egg/
+*.egg-info
+
+__pycache__
+node_modules
+
+build/
+dist/
