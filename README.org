@@ -1,8 +1,25 @@
 *** FFDL
 
-A small project to get myself reacquainted with Python. It was also a little bit useful - even though my days of reading fanfictions are long long gone, I was recently going over my old notes and it seems a lot of the stories are gone from FF.net. Fortunately fictionhunt is still around and has copy of many of those so I am using that here, but it means this tool is only limited to one fandom (HP). Well there are other tools for FF.net, AO3 etc. in general.
+Dec, 2018: A small project to get reacquainted with Python. It was also a little bit useful - even though my days of reading fanfictions are long long gone, I was recently going over my old notes and it seems a lot of the stories are gone from FF.net. 
 
-**** New things about python that I have learned something of
+Fortunately fictionhunt is still around and has copy of many of those so I am using that here. Though it necessarily means that this tool is only limited to one fandom (HP) as that's the only one fictionhunt archives. But there are other tools for FF.net, AO3 etc. in general.
+
+*** Usage
+
+#+begin_src sh
+python3 -m venv /tmp/ffdl_venv
+source /tmp/ffdl_venv/bin/activate
+pip install poetry
+
+git clone https://github.com/natrys/ffdl/ /tmp/ffdl/
+cd /tmp/ffdl/
+
+poetry install
+
+python3 ./cli.py --help
+#+end_src
+
+**** New python things that I have learned
 
 - Asynchronous I/O
    - [[https://aiohttp.readthedocs.io/en/stable/][aiohttp]]
@@ -13,7 +30,7 @@ A small project to get myself reacquainted with Python. It was also a little bit
    - [[https://click.palletsprojects.com/en/7.x/][click]] is elegant and capable, but a little complex
    - [[https://github.com/google/python-fire][Fire]] looks fantastic
 
-**** TODO Features thinking about adding
-- [ ] Create web front-end
+**** TODO Features that I don't need and might not get around to add
+- [ ] A web front-end for API server
 - [ ] Extract and add more metadata to output
-- [ ] Cache top stories
+- [ ] Cache top stories in backend

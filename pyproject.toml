@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ffdl"
-version = "0.1.2"
+version = "0.1.3"
 description = "Convert fanfiction.net stories into epub for offline reading"
 authors = ["Imran Khan <imrankhan@teknik.io>"]
 license = "AGPL-3.0-or-later"
@@ -18,4 +18,4 @@ black = {version = "^19.10b0", allow-prereleases = true}
 
 [build-system]
 requires = ["poetry>=0.12"]
-build-backend = "poetry.masonry.api"
+build-backend = "poetry.core.masonry.api"
